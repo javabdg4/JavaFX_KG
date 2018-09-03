@@ -1,4 +1,4 @@
-package JavaFX;
+package com.sda.javaFX;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
