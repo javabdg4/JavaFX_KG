@@ -1,6 +1,7 @@
 package com.sda.javaFX;
 
 import com.sda.javaFX.controller.PersonController;
+import com.sda.javaFX.view.PersonView;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ public class Main extends Application {
 
     private VBox vBox;
     private Stage stage;
+    private PersonView personView;
 
 
     public static void main(String[] args) {
@@ -34,7 +36,8 @@ public class Main extends Application {
             stage.show();
 
             PersonController personController = loader.getController();
-
+            PersonView personView = new PersonView();
+            personController.setPersonView(personView);
 
         } catch (IOException e) {
             e.printStackTrace();
