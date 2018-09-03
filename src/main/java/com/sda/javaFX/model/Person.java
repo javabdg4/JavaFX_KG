@@ -1,5 +1,6 @@
 package com.sda.javaFX.model;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Person {
@@ -11,15 +12,15 @@ public class Person {
     private StringProperty postalCode;
     private StringProperty telephone;
 
-    public Person(StringProperty name, StringProperty lastname,
-                  StringProperty street, StringProperty city,
-                  StringProperty postalCode, StringProperty telephone) {
-        this.name = name;
-        this.lastname = lastname;
-        this.street = street;
-        this.city = city;
-        this.postalCode = postalCode;
-        this.telephone = telephone;
+    public Person(String name, String lastname,
+                  String street, String city,
+                  String postalCode, String telephone) {
+        this.name = new SimpleStringProperty(name);
+        this.lastname = new SimpleStringProperty(lastname);
+        this.street = new SimpleStringProperty(street);
+        this.city = new SimpleStringProperty(city);
+        this.postalCode = new SimpleStringProperty(postalCode);
+        this.telephone = new SimpleStringProperty(telephone);
     }
 
     public String getName() {
