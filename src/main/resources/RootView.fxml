@@ -106,10 +106,10 @@
                               <Label fx:id="telephoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                            </children>
                         </GridPane>
-                        <Button layoutX="58.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="New" />
-                        <Button layoutX="142.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Edit" />
-                        <Button layoutX="223.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Save" />
-                        <Button layoutX="303.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Delete" textFill="RED" />
+                        <Button onAction="#handleNewButton" layoutX="58.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="New" />
+                        <Button onAction="#handleEditButton" layoutX="142.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Edit" />
+                        <Button onAction="#handleSaveButton" layoutX="223.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Save" />
+                        <Button onAction="#handleDeleteButton" layoutX="303.0" layoutY="315.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="64.0" text="Delete" textFill="RED" />
                      </children>
                   </AnchorPane>
               </items>

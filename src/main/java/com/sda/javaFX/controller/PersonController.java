@@ -2,6 +2,7 @@ package com.sda.javaFX.controller;
 
 import com.sda.javaFX.model.Person;
 import com.sda.javaFX.view.PersonView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -54,6 +55,22 @@ public class PersonController {
         telephoneLabel.setText(person.getTelephone());
 
 
+    }
+
+    public void handleSaveButton(ActionEvent actionEvent) {
+        System.out.println("Save");
+    }
+
+    public void handleNewButton(ActionEvent actionEvent) {
+        System.out.println("New");
+    }
+
+    public void handleEditButton(ActionEvent actionEvent) {
+        System.out.println("Edit");
+    }
+
+    public void handleDeleteButton(ActionEvent actionEvent) {
+        System.out.println("Delete");
     }
 }
 
