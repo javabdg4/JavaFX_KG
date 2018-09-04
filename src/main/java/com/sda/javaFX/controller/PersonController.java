@@ -46,7 +46,7 @@ public class PersonController {
         personTableView.getSelectionModel().selectedItemProperty().addListener((observable, oldField, newField) -> viewPersonInfoOnLabel(newField));
     }
 
-    public void viewPersonInfoOnLabel(Person person){
+    public void viewPersonInfoOnLabel(Person person) {
         nameLabel.setText(person.getName());
         lastNameLabel.setText(person.getLastname());
         streetLabel.setText(person.getStreet());
@@ -63,6 +63,7 @@ public class PersonController {
 
     public void handleNewButton(ActionEvent actionEvent) {
         System.out.println("New");
+        personView.loadNewView();
     }
 
     public void handleEditButton(ActionEvent actionEvent) {

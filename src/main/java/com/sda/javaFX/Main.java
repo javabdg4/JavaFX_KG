@@ -17,9 +17,9 @@ public class Main extends Application {
     }
 
     public void start(Stage primaryStage) throws Exception {
-        this.stage = primaryStage;
-        personView = new PersonView(this.stage);
-        personView.loadView();
+            this.stage = primaryStage;
+            personView = new PersonView(this.stage);
+            personView.loadView();
 
     }
 
