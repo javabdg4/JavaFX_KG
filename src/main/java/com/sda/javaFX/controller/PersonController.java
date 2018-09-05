@@ -58,8 +58,11 @@ public class PersonController {
     }
 
     public void handleSaveButton(ActionEvent actionEvent) {
+
         System.out.println("Save");
+
     }
+
 
     public void handleNewButton(ActionEvent actionEvent) {
         System.out.println("New");
@@ -67,7 +70,12 @@ public class PersonController {
     }
 
     public void handleEditButton(ActionEvent actionEvent) {
-        System.out.println("Edit");
+        Person selectPerson = personTableView.getSelectionModel().getSelectedItem();
+        int index = personTableView.getSelectionModel().getFocusedIndex();
+
+//        personView.getPersonList().set(2, xx)// przykład
+        System.out.println(selectPerson.toString());
+        personView.loadEditView(); //selectPerson, index
     }
 
     public void handleDeleteButton(ActionEvent actionEvent) {

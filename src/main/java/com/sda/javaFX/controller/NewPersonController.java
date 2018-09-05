@@ -28,25 +28,32 @@ public class NewPersonController {
 
     private PersonView personView;
 
-    //    public void viewNewPersonInfoOnLabel(Person person) {
-//        nameLabel.setText(person.getName());
-//        lastNameLabel.setText(person.getLastname());
-//        streetLabel.setText(person.getStreet());
-//        cityLabel.setText(person.getCity());
-//        postalCodeLabel.setText(person.getPostalCode());
-//        telephoneLabel.setText(person.getTelephone());
-//    }
+    public boolean flag;
 
     public void handleSaveButton(ActionEvent actionEvent) {
-        System.out.println(name.getText());
-        System.out.println(lastName.getText());
-        System.out.println(street.getText());
-        System.out.println(city.getText());
-        System.out.println(postalCode.getText());
-        System.out.println(telephoneNumber.getText());
-        Person person = new Person(name.getText(), lastName.getText(), street.getText(), city.getText(), postalCode.getText(), telephoneNumber.getText());
-        personView.getPersonList().add(person);
-        handleCancelButton(actionEvent);
+//        System.out.println(name.getText());
+//        System.out.println(lastName.getText());
+//        System.out.println(street.getText());
+//        System.out.println(city.getText());
+//        System.out.println(postalCode.getText());
+//        System.out.println(telephoneNumber.getText());
+
+        if (!flag) {
+            System.out.println("Zapis...");
+            Person person = new Person(name.getText(), lastName.getText(), street.getText(), city.getText(), postalCode.getText(), telephoneNumber.getText());
+            personView.getPersonList().add(person);
+        } else {
+            System.out.println("Edycja...");
+            System.out.println(name.getText());
+            System.out.println(lastName.getText());
+            System.out.println(street.getText());
+            System.out.println(city.getText());
+            System.out.println(postalCode.getText());
+            System.out.println(telephoneNumber.getText());
+
+
+        }
+
     }
 
     public void handleCancelButton(ActionEvent actionEvent) {
@@ -58,5 +65,16 @@ public class NewPersonController {
 
     public void setPersonView(PersonView personView) {
         this.personView = personView;
+    }
+
+    public void setPersonEdit(Person person) {
+
+        name.setText(person.getName());
+        lastName.setText(person.getLastname());
+        street.setText(person.getStreet());
+        city.setText(person.getCity());
+        postalCode.setText(person.getPostalCode());
+        telephoneNumber.setText(person.getTelephone());
+
     }
 }

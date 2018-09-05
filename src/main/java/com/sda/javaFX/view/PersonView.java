@@ -19,7 +19,10 @@ public class PersonView {
     private Stage stage;
 
 
+
+
     public ObservableList <Person> personList = FXCollections.observableArrayList();
+    private NewPersonController newPersonController;
 
     public ObservableList <Person> getPersonList() {
         return personList;
@@ -58,6 +61,28 @@ public class PersonView {
         newPersonStage.show();
        NewPersonController newPersonController = loader.getController();
        newPersonController.setPersonView(this);
+       newPersonController.flag = false;
+    }
+
+    public void loadEditView() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("/NewEditView.fxml"));
+        VBox newPersonView = null;
+        try {
+            newPersonView = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Stage newPersonStage = new Stage();
+        Scene newPersonScene = new Scene(newPersonView);
+        newPersonStage.setScene(newPersonScene);
+        newPersonStage.show();
+        Person person = new Person("TestEdit", "TestEdit", "TestEdit", "TestEdit", "TestEdit", "TestEdit");
+        NewPersonController newPersonController = loader.getController();
+        newPersonController.setPersonEdit(person);
+        newPersonController.flag = true;
+        //1
     }
 
     public void loadView() {
