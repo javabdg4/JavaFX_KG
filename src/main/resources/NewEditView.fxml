@@ -44,9 +44,9 @@
 
                </children>
             </GridPane>
-            <Button fx:id = "closeButton" layoutX="531.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="25.0" prefWidth="81.0" text="Cancel" />
+            <Button fx:id="closeButton" layoutX="531.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="25.0" prefWidth="81.0" text="Cancel" />
             <Button layoutX="443.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="25.0" prefWidth="81.0" text="Save" />
-            <Label layoutX="26.0" layoutY="8.0" prefHeight="48.0" prefWidth="537.0" text="Add new employee">
+            <Label layoutX="26.0" layoutY="8.0" prefHeight="48.0" prefWidth="537.0" text="add/edit person">
                <font>
                   <Font size="25.0" />
                </font>

@@ -4,7 +4,9 @@ import com.sda.javaFX.model.Person;
 import com.sda.javaFX.view.PersonView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -28,6 +30,8 @@ public class NewPersonController {
 
     private PersonView personView;
 
+    public int index;
+
     public boolean flag;
 
     public void handleSaveButton(ActionEvent actionEvent) {
@@ -50,10 +54,18 @@ public class NewPersonController {
             System.out.println(city.getText());
             System.out.println(postalCode.getText());
             System.out.println(telephoneNumber.getText());
+            Person person = new Person(name.getText(), lastName.getText(), street.getText(), city.getText(), postalCode.getText(), telephoneNumber.getText());
+            personView.getPersonList().set(this.index, person);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure", ButtonType.YES, ButtonType.NO);
 
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.YES) {
+                System.out.println("Zapisywanie...");
+            }
 
         }
-
+        handleCancelButton(actionEvent);
     }
 
     public void handleCancelButton(ActionEvent actionEvent) {
@@ -75,6 +87,12 @@ public class NewPersonController {
         city.setText(person.getCity());
         postalCode.setText(person.getPostalCode());
         telephoneNumber.setText(person.getTelephone());
+
+    }
+
+    public void setSelectedIndex(int index) {
+
+        this.index = index;
 
     }
 }

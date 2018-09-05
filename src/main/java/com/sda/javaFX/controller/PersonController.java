@@ -4,9 +4,7 @@ import com.sda.javaFX.model.Person;
 import com.sda.javaFX.view.PersonView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
 
 public class PersonController {
@@ -70,15 +68,29 @@ public class PersonController {
     }
 
     public void handleEditButton(ActionEvent actionEvent) {
+
         Person selectPerson = personTableView.getSelectionModel().getSelectedItem();
         int index = personTableView.getSelectionModel().getFocusedIndex();
 
 //        personView.getPersonList().set(2, xx)// przykład
         System.out.println(selectPerson.toString());
-        personView.loadEditView(); //selectPerson, index
+        personView.loadEditView(selectPerson, index);
     }
 
     public void handleDeleteButton(ActionEvent actionEvent) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure", ButtonType.YES, ButtonType.NO);
+
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            System.out.println("Usuwanie...");
+        }
+
+
+        Person personToDelete = personTableView.getSelectionModel().getSelectedItem();
+        personView.getPersonList().remove(personToDelete);
+        personView.loadDeleteView();
         System.out.println("Delete");
     }
 }

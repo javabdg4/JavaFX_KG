@@ -64,7 +64,7 @@ public class PersonView {
        newPersonController.flag = false;
     }
 
-    public void loadEditView() {
+    public void loadEditView(Person person, int index) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("/NewEditView.fxml"));
         VBox newPersonView = null;
@@ -78,9 +78,10 @@ public class PersonView {
         Scene newPersonScene = new Scene(newPersonView);
         newPersonStage.setScene(newPersonScene);
         newPersonStage.show();
-        Person person = new Person("TestEdit", "TestEdit", "TestEdit", "TestEdit", "TestEdit", "TestEdit");
         NewPersonController newPersonController = loader.getController();
         newPersonController.setPersonEdit(person);
+        newPersonController.setSelectedIndex(index);
+        newPersonController.setPersonView(this);
         newPersonController.flag = true;
         //1
     }
@@ -100,6 +101,11 @@ public class PersonView {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void loadDeleteView() {
+        loadView();
+
     }
 }
 
